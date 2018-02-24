@@ -50,7 +50,14 @@
 </div>
 <script>
 function saveBookmark(id) {
-console.log(id);
+localStorage.setItem('ChromeApp', id);
+if(localStorage.getItem('ChromeApp') === null) {
+//Init array
+var bookmarks = [];
+bookmarks.push(bookmarks);
+//Set to localStorage
+localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+}
 }
 </script>
 <script src="popup.js"></script>
