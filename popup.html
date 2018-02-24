@@ -48,16 +48,24 @@
 <i class="fa fa-linkedin"></i>
 </div>
 </div>
+</div>
 <script>
 function saveBookmark(id) {
-localStorage.setItem('ChromeApp', id);
-if(localStorage.getItem('ChromeApp') === null) {
-//Init array
-var bookmarks = [];
-bookmarks.push(bookmarks);
-//Set to localStorage
-localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-}
+if(localStorage.getItem('ChromeApp') === null){
+    // Init array
+    var linkVisit = [];
+    // Add to array
+    linkVisit.push(id);
+    // Set to localStorage
+    localStorage.setItem('ChromeApp', JSON.stringify(linkVisit));
+  } else {
+    // Get bookmarks from localStorage
+    var linkVisit = JSON.parse(localStorage.getItem('ChromeApp'));
+    // Add bookmark to array
+    linkVisit.push(id);
+    // Re-set back to localStorage
+    localStorage.setItem('ChromeApp', JSON.stringify(linkVisit));
+  }
 }
 </script>
 <script src="popup.js"></script>
