@@ -22,32 +22,38 @@
 </div>
 <div class="modal-icons">
 <div class="flex-container">
-<div class="flex">
-<a href="https://webmobapps.com" target="_blank">
+<div class="flex" id="Website" onclick="saveBookmark(this.id)">
+<a href="http://allweatherroofline.com" target="_blank">
 </a>
 <i class="fa fa-globe"></i>
 </div>
-<div class="flex">
-<a href="https://webmobapps.com" target="_blank">
+<div class="flex" id="YouTube" onclick="saveBookmark(this.id)">
+<a href="#" target="_blank">
+</a>
 <i class="fa fa-youtube"></i>
-  </a>
-  </div>
-   <div class="flex">
-        <a href="https://webmobapps.com" target="_blank">
-      <i class="fa fa-facebook"></i>
-      </a>
-  </div>
-  <div class="flex">
-      <a href="https://webmobapps.com" target="_blank">
-    <i class="fa fa-twitter"></i>
-    </a>
-    </div>
- <div class="flex">
-          <a href="https://webmobapps.com" target="_blank">
-        <i class="fa fa-linkedin"></i>
-        </a>
-        </div>    
 </div>
-  <script src="popup.js"></script>
+<div class="flex" id="Facebook" onclick="saveBookmark(this.id)">
+<a href="#" target="_blank">
+</a>
+<i class="fa fa-facebook"></i>
+</div>
+<div class="flex" id="Twitter" onclick="saveBookmark(this.id)">
+<a href="#" target="_blank">
+</a>
+<i class="fa fa-twitter"></i>
+</div>
+<div class="flex" id="Linkedin" onclick="saveBookmark(this.id)">
+<a href="#" target="_blank">
+</a>
+<i class="fa fa-linkedin"></i>
+</div>
+</div>
+<script>
+function saveBookmark(id) {
+console.log(id);
+}
+</script>
+<script src="popup.js"></script>
 </body>
 </html>
+<!--onclick="localStorage.setItem('ChromeApp','Linkedin')" data-fajax="false"
