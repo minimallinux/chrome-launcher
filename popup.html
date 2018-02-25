@@ -53,7 +53,7 @@
 function saveBookmark(id) {
 if(localStorage.getItem('ChromeApp') === null){
     // Init array
-    var linkVisit = [];
+    var linkVisit = []
     // Add to array
     linkVisit.push(id);
     // Set to localStorage
@@ -66,9 +66,28 @@ if(localStorage.getItem('ChromeApp') === null){
     // Re-set back to localStorage
     localStorage.setItem('ChromeApp', JSON.stringify(linkVisit));
   }
+fetchBookmarks();
+deleteBookmark();
+}
+// Fetch bookmarks
+function fetchBookmarks(){
+  // Get bookmarks from localStorage
+var linkVisit = JSON.parse(localStorage.getItem('ChromeApp'));
+console.log(linkVisit);
+}
+function deleteBookmark(id){
+  // Get bookmarks from localStorage
+  var linkVisit = JSON.parse(localStorage.getItem('ChromeApp'));
+  // Loop through the bookmarks
+  for(var i =0;i < linkVisit.length;i++){
+    if(linkVisit[i].id == id){
+      // Remove from array
+      linkVisit.splice(i, 1);
+    }
+}
 }
 </script>
 <script src="popup.js"></script>
 </body>
 </html>
-<!--onclick="localStorage.setItem('ChromeApp','Linkedin')" data-fajax="false"
+
